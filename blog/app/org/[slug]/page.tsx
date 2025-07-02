@@ -20,7 +20,7 @@ function OrganizationLandingPage(): React.JSX.Element {
     await createBlog({
       title: blogTitle,
       body: blogContent,
-      orgId: selectedOrg.organization?.id, // Replace with actual org ID logic
+      orgId: selectedOrg.organization?.id,
     });
   }
 

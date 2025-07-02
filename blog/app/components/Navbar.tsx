@@ -1,4 +1,10 @@
-import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
+import {
+  OrganizationSwitcher,
+  UserButton,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+} from "@clerk/nextjs";
 import React, { JSX } from "react";
 
 function Navbar(): JSX.Element {
@@ -13,7 +19,8 @@ function Navbar(): JSX.Element {
           afterSelectOrganizationUrl={"/org/:slug"}
           afterCreateOrganizationUrl={"/org/:slug"}
         />
-        <UserButton />
+        {SignedIn && <UserButton />}
+        {SignedOut && <SignInButton />}
       </div>
     </nav>
   );

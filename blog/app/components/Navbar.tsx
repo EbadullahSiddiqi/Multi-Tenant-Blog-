@@ -19,8 +19,13 @@ function Navbar(): JSX.Element {
           afterSelectOrganizationUrl={"/org/:slug"}
           afterCreateOrganizationUrl={"/org/:slug"}
         />
-        {SignedIn && <UserButton />}
-        {SignedOut && <SignInButton />}
+
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
       </div>
     </nav>
   );
